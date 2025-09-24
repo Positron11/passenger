@@ -1,0 +1,30 @@
+label.Toggle>input[type="checkbox"] {
+    height: 0;
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+}
+
+label.Toggle {
+    border: var(--border-std);
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    font: 0.8em var(--ff-mono);
+    padding: 0.5em;
+    user-select: none;
+	white-space: nowrap;
+}
+
+label.Toggle::after {
+    content: "[ ]";
+}
+
+label.Toggle:has(input[type="checkbox"]:checked) {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+label.Toggle:has(input[type="checkbox"]:checked)::after {
+    content: "[x]";
+}

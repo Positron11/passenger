@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<!-- site meta -->
+	<meta charset="UTF-8">
+	<meta name="author" content="Aarush Kumbhakern">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Passenger</title>
+
+	<!-- styles -->
+	<link rel="stylesheet" href="css/hegel/hegel.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- scripts -->
+	<script type="module" src="js/main.js" defer></script>
+</head>
+
+<body>
+	<div id="Page" class="Flexbox mCol mStdSpacing">
+		<header>
+			<h1>Passenger</h1>
+			<p>Local PBKDF2 + ByteWords password gen. and manager.</p>
+		</header>
+
+		<div class="Flexbox mMinSpacing mVAlignCenter">
+			<hr>
+
+			<label class="Toggle iJustifyLeft">
+				Auto-Copy
+				<input type="checkbox" name="Auto-Copy" id="AutoCopy" checked>
+			</label>
+		</div>
+
+		<main class="Flexbox mCol mCmpSpacing">
+			<div>
+				<label for="Passkey">Passkey</label>
+				<input type="password" name="passkey" id="Passkey" autofocus>
+			</div>
+			
+			<div>
+				<label for="Application">Use Case</label>
+				<input type="text" name="application" id="Application" placeholder="eg. google:martha2011">
+			</div>
+		</main>
+		
+		<code id="Canvas" aria-live="polite"></code>
+
+		<hr>
+
+		<footer>
+			<p class="tGray"><small>Aarush Kumbhakern &copy; <span id="Year"></span> | <a href="https://github.com/Positron11/passenger" target="_blank">Source & docs</a>.</small></p>
+			
+			<!-- auto-updating year script -->
+			<script>document.getElementById("Year").textContent = new Date().getFullYear();</script>
+		</footer>
+	</div>
+</body>
+</html>

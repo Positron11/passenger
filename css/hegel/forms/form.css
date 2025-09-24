@@ -1,0 +1,8 @@
+label:not(.Toggle) {
+	display: block;
+	font-weight: var(--fw-literata-bold);
+}
+
+label:not(.Toggle)+:is(input[type="text"], input[type="password"]) {
+	margin-top: 0.5em;
+}

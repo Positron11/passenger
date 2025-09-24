@@ -1,0 +1,39 @@
+@import url(fonts/literata/literata.css);
+@import url(fonts/commit_mono/commit_mono.css);
+
+:root {
+    --ff-serif: "Literata", serif;
+    --ff-mono: "Commit Mono", monospace;
+}
+
+body {
+    color: var(--color-fg);
+    font: 350 14px var(--ff-serif);
+}
+
+a {
+    color: inherit;
+}
+
+b {
+    font-weight: var(--fw-literata-bold);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 600;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+*+p {
+    margin-top: 0.5em;
+}
+
+code {
+    font: 0.8em var(--ff-mono);
+}

@@ -1,0 +1,32 @@
+@import url(reset.css);
+@import url(color.css);
+@import url(semantic.css);
+@import url(typography.css);
+
+@import url(forms/form.css);
+@import url(forms/input.css);
+@import url(forms/button.css);
+
+@import url(elements/flexbox.css);
+
+:root {
+    --std-spacing: 2em;
+    --cmp-spacing: 1em;
+    --min-spacing: 0.5em;
+
+    --color-fg: var(--black);
+    --color-bg: var(--white);
+
+    --shadow: #0001;
+
+    --border-std: 1px dotted var(--black);
+}
+
+body {
+    background-color: var(--color-bg);
+}
+
+::selection {
+    background-color: var(--yellow);
+    color: var(--color-fg);
+}

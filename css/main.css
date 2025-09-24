@@ -1,0 +1,9 @@
+#Page {
+    padding: min(5em, 7.5vw);
+    width: fit-content;
+}
+
+#Canvas {
+    background-color: var(--shadow);
+    padding: var(--min-spacing);
+}

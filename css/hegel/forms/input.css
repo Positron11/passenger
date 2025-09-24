@@ -1,0 +1,16 @@
+input[type="text"],
+input[type="password"] {
+	border: var(--border-std);
+	border-radius: 2px;
+	font: 0.8em "Commit Mono", monospace;
+	padding: 0.5em;
+}
+
+:is(input[type="text"], input[type="password"]):focus {
+	border: 1px solid var(--gray);
+}
+
+:is(input[type="text"], input[type="password"])::placeholder {
+	color: var(--gray);
+	font-size: 0.9em;
+}
