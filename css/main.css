@@ -7,3 +7,7 @@
     background-color: var(--shadow);
     padding: var(--min-spacing);
 }
+
+#Canvas.sEmpty {
+    color: var(--gray);
+}
