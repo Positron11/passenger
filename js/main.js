@@ -1,5 +1,6 @@
 import { deriveSiteKey, hkdfExpand, appendDigitTail } from "./crypto.js";
 import { encodeBytewords } from "./words.js";
+import { debounce } from "./utils.js";
 
 const passkeyInput = document.getElementById("Passkey");
 const usageInput = document.getElementById("Application");
@@ -26,6 +27,7 @@ async function updatePassphraseSpan() {
 	if (hasApp && hasPass) {
 		// derive byte streams
 		const baseKey = await deriveSiteKey(passkeyInput.value, usageInput.value);
+
 		const pwdBytes = await hkdfExpand(baseKey, usageInput.value, "password", { kLen: 8 });
 		const cmpBytes = await hkdfExpand(baseKey, usageInput.value, "compliance", { klen: 10 });
 
@@ -49,40 +51,4 @@ async function updatePassphraseSpan() {
 		passphraseSpan.textContent = "Enter passkey and usage...";
 		passphraseSpan.classList.add("sEmpty");
 	}
-}
-
-function debounce(fn, { wait = 50 } = {}) {
-	let t, lastArgs, lastThis;
-
-	// main debouncer
-	function debounced(...args) {
-		lastArgs = args;
-		lastThis = this;
-
-		clearTimeout(t);
-
-		t = setTimeout(() => {
-			t = null;
-
-			fn.apply(lastThis, lastArgs);
-		}, wait);
-	}
-
-	// cancel scheduled run
-	debounced.cancel = () => {
-		clearTimeout(t);
-		t = null;
-	};
-
-	// run immediately if pending
-	debounced.flush = () => {
-		if (t) {
-			clearTimeout(t);
-			t = null;
-
-			fn.apply(lastThis, lastArgs);
-		}
-	};
-
-	return debounced;
 }
