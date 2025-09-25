@@ -52,7 +52,7 @@ export async function hkdfExpand(
 	ikmBytes,
 	appString,
 	info,
-	{ kLen = 8 } = {}
+	{ kLen = 12 } = {}
 ) {
 	const salt = await subtle.digest("SHA-256", enc.encode("hkdf|" + appString));
 

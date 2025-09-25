@@ -26,8 +26,8 @@ async function updatePassphraseSpan() {
 	if (hasApp && hasPass) {
 		// derive byte streams
 		const baseKey = await deriveSiteKey(passkeyInput.value, usageInput.value);
-		const pwdBytes = await hkdfExpand(baseKey, usageInput.value, "password");
-		const cmpBytes = await hkdfExpand(baseKey, usageInput.value, "compliance");
+		const pwdBytes = await hkdfExpand(baseKey, usageInput.value, "password", { kLen: 8 });
+		const cmpBytes = await hkdfExpand(baseKey, usageInput.value, "compliance", { klen: 10 });
 
 		// construct passkey
 		const passphrase = appendDigitTail(encodeBytewords(pwdBytes), cmpBytes);
