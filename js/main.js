@@ -28,8 +28,8 @@ async function updatePassphraseSpan() {
 		// derive byte streams
 		const baseKey = await deriveSiteKey(passkeyInput.value, usageInput.value);
 
-		const pwdBytes = await hkdfExpand(baseKey, usageInput.value, "password", { kLen: 8 });
-		const cmpBytes = await hkdfExpand(baseKey, usageInput.value, "compliance", { klen: 10 });
+		const pwdBytes = await hkdfExpand(baseKey, usageInput.value, "password", { kLen: 9 });
+		const cmpBytes = await hkdfExpand(baseKey, usageInput.value, "compliance");
 
 		// construct passkey
 		const passphrase = appendDigitTail(encodeBytewords(pwdBytes), cmpBytes);
