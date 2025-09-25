@@ -10,7 +10,14 @@ const autoCopyToggle = document.getElementById("AutoCopy");
 const debouncedUpdate = debounce(updatePassphraseSpan, { wait: 500 });
 
 // initial render
+const autoCopySetting = localStorage.getItem("autoCopyEnabled");
+if (autoCopySetting !== null) autoCopyToggle.checked = autoCopySetting === "true";
+
 updatePassphraseSpan();
+
+autoCopyToggle.addEventListener("change", () => {
+	localStorage.setItem("autoCopyEnabled", autoCopyToggle.checked);
+});
 
 usageInput.addEventListener("input", (e) => {
 	// sanitize: lowercase, no whitespace
