@@ -13,7 +13,6 @@ export function sha256Bytes(text) {
  * Derive a per-app key with PBKDF2-HMAC-SHA-256 (calibrated).
  * passKey: string (master passphrase)
  * appString: string (verbatim); salt = SHA-256("salt|" + appstring)
- * opts: { targetMs=400, minIters=150_000, maxIters=3_000_000, dkLen=32 }
  */
 export async function deriveSiteKey(
 	passKey,
@@ -110,7 +109,6 @@ function makeSampler(bytes) {
  * Append a deterministic numeric tail to a passphrase.
  * basePass: string
  * cmpBytes: ArrayBuffer/TypedArray
- * opts: { digits=4, sep="-" }
  * Returns: string (eg. "Luau-Nail-Item-...-4823")
  */
 export function appendDigitTail(
