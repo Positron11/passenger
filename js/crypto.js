@@ -18,7 +18,7 @@ export function sha256Bytes(text) {
 export async function deriveSiteKey(
 	passKey,
 	appString,
-	{ targetMs = 400, iters = 3000000, dkLen = 32 } = {}
+	{ iters = 3000000, dkLen = 32 } = {}
 ) {
 	// public, deterministic, per-app salt
 	const salt = await sha256Bytes("salt|" + appString);
@@ -87,17 +87,21 @@ function makeSampler(bytes) {
 	let i = 0;
 
 	const nextU32 = () => {
-		const a = v[i++ % v.length], b = v[i++ % v.length],
-			c = v[i++ % v.length], d = v[i++ % v.length];
+		const a = v[i++ % v.length];
+		const b = v[i++ % v.length];
+		const c = v[i++ % v.length];
+		const d = v[i++ % v.length];
 
 		return (((a * 0x1000000) + (b << 16) + (c << 8) + d) >>> 0);
 	};
 
 	return (n) => {
-		const RANGE = 0x100000000, LIMIT = Math.floor(RANGE / n) * n;
+		const RANGE = 0x100000000;
+		const LIMIT = Math.floor(RANGE / n) * n;
 
 		while (true) {
-			const x = nextU32(); if (x < LIMIT) return x % n;
+			const x = nextU32();
+			if (x < LIMIT) return x % n;
 		}
 	};
 }
@@ -116,10 +120,10 @@ export function appendDigitTail(
 ) {
 	const sample = makeSampler(cmpBytes);
 	let tail = "";
-	
+
 	for (let i = 0; i < digits; i++) {
 		tail += String(sample(10));
 	}
-	
+
 	return `${basePass}${sep}${tail}`;
 }
