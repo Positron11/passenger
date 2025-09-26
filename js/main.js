@@ -6,6 +6,7 @@ const passkeyInput = document.getElementById("Passkey");
 const usageInput = document.getElementById("Application");
 const passphraseSpan = document.getElementById("Canvas");
 const autoCopyToggle = document.getElementById("AutoCopy");
+const copyButton = document.getElementById("Copy");
 
 const debouncedUpdate = debounce(updatePassphraseSpan, { wait: 500 });
 
@@ -15,13 +16,18 @@ if (autoCopySetting !== null) autoCopyToggle.checked = autoCopySetting === "true
 
 updatePassphraseSpan();
 
-autoCopyToggle.addEventListener("change", () => {
+autoCopyToggle.addEventListener("change", function () {
 	localStorage.setItem("autoCopyEnabled", autoCopyToggle.checked);
+	setCopybuttonState();
 });
 
 usageInput.addEventListener("input", (e) => {
 	// sanitize: lowercase, no whitespace
 	e.target.value = e.target.value.replace(/\s+/g, "").toLowerCase();
+});
+
+copyButton.addEventListener("click", async () => {
+	await navigator.clipboard.writeText(passphraseSpan.textContent);
 });
 
 usageInput.addEventListener("input", debouncedUpdate);
@@ -58,4 +64,10 @@ async function updatePassphraseSpan() {
 		passphraseSpan.textContent = "Enter passkey and usage...";
 		passphraseSpan.classList.add("sEmpty");
 	}
+
+	setCopybuttonState();
+}
+
+function setCopybuttonState() {
+	copyButton.disabled = autoCopyToggle.checked || passphraseSpan.classList.contains("sEmpty");
 }

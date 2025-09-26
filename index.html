@@ -29,7 +29,7 @@
 
 			<label class="Toggle iJustifyLeft">
 				Auto-Copy
-				<input type="checkbox" name="Auto-Copy" id="AutoCopy" checked>
+				<input type="checkbox" name="Auto-Copy" id="AutoCopy">
 			</label>
 		</div>
 
@@ -45,7 +45,10 @@
 			</div>
 		</main>
 		
-		<code id="Canvas" aria-live="polite"></code>
+		<div class="Flexbox mMinSpacing">
+			<code id="Canvas" class="iGrow" aria-live="polite"></code>
+			<button id="Copy">Copy</button>
+		</div>
 
 		<hr>
 

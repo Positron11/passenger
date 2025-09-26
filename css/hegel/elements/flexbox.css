@@ -25,3 +25,7 @@
 .Flexbox.mVAlignCenter {
     align-items: center;
 }
+
+.Flexbox>.iGrow {
+    flex-grow: 1;
+}
