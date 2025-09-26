@@ -15,6 +15,11 @@ a {
     color: inherit;
 }
 
+a:focus {
+    outline: var(--border-focus);
+    outline-offset: 1px;
+}
+
 b {
     font-weight: var(--fw-literata-bold);
 }

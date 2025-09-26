@@ -1,10 +1,4 @@
-label.Toggle>input[type="checkbox"] {
-    height: 0;
-    position: absolute;
-    visibility: hidden;
-    width: 0;
-}
-
+button,
 label.Toggle {
     border: var(--border-std);
     border-radius: 2px;
@@ -13,16 +7,39 @@ label.Toggle {
     font: 0.8em var(--ff-mono);
     padding: 0.5em;
     user-select: none;
-	white-space: nowrap;
+    white-space: nowrap;
 }
 
-label.Toggle::after {
-    content: "[ ]";
+button:focus,
+label.Toggle:has(input[type="checkbox"]:focus) {
+    outline: var(--border-focus);
+    outline-offset: 2px;
+}
+
+button:disabled,
+label.Toggle:has(input[type="checkbox"]:disabled) {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+button {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+label.Toggle>input[type="checkbox"] {
+    height: 0;
+    position: absolute;
+    width: 0;
 }
 
 label.Toggle:has(input[type="checkbox"]:checked) {
     background-color: var(--black);
     color: var(--white);
+}
+
+label.Toggle::after {
+    content: "[ ]";
 }
 
 label.Toggle:has(input[type="checkbox"]:checked)::after {

@@ -20,6 +20,7 @@
     --shadow: #0001;
 
     --border-std: 1px dotted var(--black);
+    --border-focus: 1px dashed var(--gray);
 }
 
 body {

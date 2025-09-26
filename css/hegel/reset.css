@@ -3,6 +3,10 @@ body {
     margin: 0;
 }
 
+a {
+    outline: none;
+}
+
 h1,
 h2,
 h3,
@@ -23,11 +27,16 @@ input[type="text"],
 input[type="password"] {
     background: none;
     border: none;
-    font-size: 1em;
     outline: none;
     padding: 0;
 }
 
 input[type="checkbox"] {
     margin: 0;
+    outline: none;
+}
+
+button {
+    background: none;
+    border: none;
 }
