@@ -1,11 +1,18 @@
 #Page {
+    max-width: 100%;
     padding: min(5em, 7.5vw);
     width: fit-content;
 }
 
 #Canvas {
+    align-items: center;
     background-color: var(--shadow);
+    box-sizing: content-box;
+    display: flex;
+    overflow-y: auto;
     padding: var(--min-spacing);
+    white-space: nowrap;
+    width: 49ch;
 }
 
 #Canvas.sEmpty {
