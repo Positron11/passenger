@@ -31,3 +31,7 @@ body {
     background-color: var(--yellow);
     color: var(--color-fg);
 }
+
+* {
+    box-sizing: border-box;
+}
