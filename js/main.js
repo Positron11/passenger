@@ -41,7 +41,7 @@ async function updatePassphraseSpan() {
 		// derive byte streams
 		const baseKey = await deriveSiteKey(passkeyInput.value, usageInput.value);
 
-		const pwdBytes = await hkdfExpand(baseKey, usageInput.value, "password", { kLen: 9 });
+		const pwdBytes = await hkdfExpand(baseKey, usageInput.value, "password", { kLen: 6 });
 		const cmpBytes = await hkdfExpand(baseKey, usageInput.value, "compliance");
 
 		// construct passkey
