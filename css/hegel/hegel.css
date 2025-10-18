@@ -10,17 +10,16 @@
 @import url(elements/flexbox.css);
 
 :root {
-    --std-spacing: 2em;
-    --cmp-spacing: 1em;
-    --min-spacing: 0.5em;
+    --dbl-spacing: 2em;
+    --std-spacing: 1em;
+    --cmp-spacing: 0.5em;
 
     --color-fg: var(--black);
     --color-bg: var(--white);
 
-    --shadow: #0001;
-
-    --border-std: 1px dotted var(--black);
-    --border-focus: 1px dashed var(--gray);
+    --border-std   : 1px dotted var(--black);
+    --border-slight: 1px solid var(--light-gray);
+    --border-focus : 1px dashed var(--dark-gray);
 }
 
 body {
@@ -29,7 +28,7 @@ body {
 
 ::selection {
     background-color: var(--yellow);
-    color: var(--color-fg);
+    color           : var(--color-fg);
 }
 
 * {

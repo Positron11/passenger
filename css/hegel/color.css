@@ -1,11 +1,13 @@
 :root {
-	--black: #111;
-	--gray: #888;
-	--white: #FFF;
-	--green: #1E6149;
-	--yellow: #f1d483;
+	--black     : #111;
+	--dark-gray : #888;
+	--light-gray: #CCC;
+	--white     : #FFF;
+	--green     : #1E6149;
+	--yellow    : #F1D483;
+	--darken    : #0001
 }
 
 .tGray {
-	color: var(--gray);
+	color: var(--dark-gray);
 }

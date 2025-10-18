@@ -1,4 +1,15 @@
 hr {
+	width     : 100%;
 	border-top: var(--border-std);
-	width: 100%;
+}
+
+table {
+	border         : var(--border-std);
+	border-collapse: collapse;
+	table-layout   : fixed;
+}
+
+td {
+	padding: calc(var(--cmp-spacing) / 2);
+	border : var(--border-slight);
 }

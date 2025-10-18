@@ -10,16 +10,16 @@
     justify-content: space-between;
 }
 
+.Flexbox.mDblSpacing {
+    grid-gap: var(--dbl-spacing)
+}
+
 .Flexbox.mStdSpacing {
     grid-gap: var(--std-spacing)
 }
 
 .Flexbox.mCmpSpacing {
     grid-gap: var(--cmp-spacing)
-}
-
-.Flexbox.mMinSpacing {
-    grid-gap: var(--min-spacing)
 }
 
 .Flexbox.mVAlignCenter {

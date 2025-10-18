@@ -18,38 +18,42 @@
 </head>
 
 <body>
-	<div id="Page" class="Flexbox mCol mStdSpacing">
+	<div id="Page" class="Flexbox mCol mDblSpacing">
 		<header>
 			<h1>Passenger</h1>
 			<p>Local PBKDF2 + ByteWords password gen. and manager.</p>
 		</header>
 
-		<div class="Flexbox mMinSpacing mVAlignCenter">
-			<hr>
-
-			<label class="Toggle iJustifyLeft">
-				Auto-Copy
-				<input type="checkbox" name="Auto-Copy" id="AutoCopy">
-			</label>
-		</div>
-
-		<main class="Flexbox mCol mCmpSpacing">
-			<div>
-				<label for="Passkey">Passkey</label>
-				<input type="password" name="passkey" id="Passkey" autofocus>
+		<div class="Flexbox mCol mStdSpacing">
+			<div class="Flexbox mCmpSpacing mVAlignCenter">
+				<hr>
+				
+				<label class="Toggle iJustifyLeft">
+					Auto-Copy
+					<input type="checkbox" name="Auto-Copy" id="AutoCopy">
+				</label>
 			</div>
 			
-			<div>
-				<label for="Application">Use Case</label>
-				<input type="text" name="application" id="Application" placeholder="eg. google:martha2011" spellcheck="false">
-			</div>
-		</main>
-		
-		<div class="Flexbox mMinSpacing">
-			<code id="Canvas" class="iGrow" aria-live="polite"></code>
-			<button id="Copy">Copy</button>
+			<main>			
+				<table>
+					<tr>
+						<td><label for="Passkey">Passkey</label></td>
+						<td><input type="password" name="passkey" id="Passkey" autofocus></td>
+					</tr>
+					
+					<tr>
+						<td><label for="Application">Use Case</label></td>
+						<td><input type="text" name="application" id="Application" placeholder="eg. google:martha2011" spellcheck="false"></td>
+					</tr>
+				</table>
+			</main>
+			
+			<div class="Flexbox mCmpSpacing">
+				<code id="Canvas" class="iGrow" aria-live="polite"></code>
+				<button id="Copy">Copy</button>
+			</div>	
 		</div>
-
+		
 		<hr>
 
 		<footer>

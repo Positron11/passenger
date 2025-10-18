@@ -1,20 +1,20 @@
 #Page {
+    width    : fit-content;
     max-width: 100%;
-    padding: min(5em, 7.5vw);
-    width: fit-content;
+    padding  : min(5em, 7.5vw);
 }
 
 #Canvas {
-    align-items: center;
-    background-color: var(--shadow);
-    box-sizing: content-box;
-    display: flex;
-    overflow-y: auto;
-    padding: var(--min-spacing);
-    white-space: nowrap;
-    width: 49ch;
+    box-sizing      : content-box;
+    display         : flex;
+    align-items     : center;
+    width           : 34ch;
+    padding         : var(--cmp-spacing);
+    overflow-y      : auto;
+    background-color: var(--darken);
+    white-space     : nowrap;
 }
 
 #Canvas.sEmpty {
-    color: var(--gray);
+    color: var(--dark-gray);
 }
